@@ -1,21 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import { set, get } from 'idb-keyval';
-import './App.css';
-import * as serviceWorker from './serviceWorkerRegistration';
+import React from "react";
+import logo from "./logo.svg";
+import { set, get } from "idb-keyval";
+import "./App.css";
+import * as serviceWorker from "./serviceWorkerRegistration";
 
 function App() {
-  const [keyVal, setKeyVal] = React.useState<string>('');
+  const [keyVal, setKeyVal] = React.useState<string>("");
 
   serviceWorker.register();
 
-async function testIDBKeyval() {
-    await set('hello', 'world');
-    const whatDoWeHave = await get('hello');
+  async function testIDBKeyval() {
+    await set("hello", "world");
+    const whatDoWeHave = await get("hello");
     setKeyVal(whatDoWeHave);
-}
+  }
 
-testIDBKeyval();
+  testIDBKeyval();
 
   return (
     <div className="App">
