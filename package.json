@@ -41,6 +41,11 @@
     "lint": "eslint --ext .js,.ts,.tsx",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|tsx|json)\""
   },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npm run lint"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -65,6 +70,8 @@
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
     "prettier": "^3.1.0"
   }
 }
