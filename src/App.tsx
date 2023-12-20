@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Grommet } from 'grommet';
 import { usePersistedState } from "./hooks/usePersistedState";
-import "./App.css";
 import * as serviceWorker from "./serviceWorkerRegistration";
 
 function App() {
@@ -28,13 +27,13 @@ function App() {
   };
 
   return (
-    <div className="App">
+      <Grommet full>
       {darkModeOn === undefined ? (
         <>Loading preferences...</>
       ) : (
         <>
           <header className="App-header" style={styles}>
-            <img src={logo} className="App-logo" alt="logo" />
+              Hello World
             <p>
               Edit <code>src/App.tsx</code> and save to reload.
             </p>
@@ -61,7 +60,7 @@ function App() {
           </header>
         </>
       )}
-    </div>
+    </Grommet>
   );
 }
 
