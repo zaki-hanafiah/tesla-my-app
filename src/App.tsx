@@ -27,7 +27,7 @@ function App() {
   };
 
   return (
-      <Grommet full>
+      <Grommet themeMode={darkModeOn ? 'dark' : 'light'}>
       {darkModeOn === undefined ? (
         <>Loading preferences...</>
       ) : (
