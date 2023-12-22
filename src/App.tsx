@@ -1,7 +1,8 @@
 import React from "react";
-import { Grommet } from 'grommet';
+import { Grommet, Heading, Main, CheckBox } from "grommet";
 import { usePersistedState } from "./hooks/usePersistedState";
 import * as serviceWorker from "./serviceWorkerRegistration";
+import { Paragraph } from "grommet/es6";
 
 function App() {
   const [darkModeOn, setDarkModeOn] = usePersistedState<boolean>(
@@ -27,38 +28,36 @@ function App() {
   };
 
   return (
-      <Grommet themeMode={darkModeOn ? 'dark' : 'light'}>
+    <Grommet themeMode={darkModeOn ? "dark" : "light"} full={true}>
       {darkModeOn === undefined ? (
         <>Loading preferences...</>
       ) : (
-        <>
-          <header className="App-header" style={styles}>
-              Hello World
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <p>
-              <input
-                type="checkbox"
-                value="darkMode"
-                checked={darkModeOn}
-                id="darkModeOn"
-                name="darkModeOn"
-                style={{ width: "3rem", height: "3rem" }}
-                onChange={handleOnChange}
-              />
-              <label htmlFor="darkModeOn">Use dark mode?</label>
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </>
+        <Main background={darkModeOn ? "black" : "white"} pad="large">
+          <Heading className="App-header" style={styles}>
+            Hello World
+          </Heading>
+          <Paragraph>
+            Edit <code>src/App.tsx</code> and save to reload.
+          </Paragraph>
+          <Paragraph>
+            <CheckBox
+              value="darkMode"
+              checked={darkModeOn}
+              label="Use dark mode?"
+              id="darkModeOn"
+              name="darkModeOn"
+              onChange={handleOnChange}
+            />
+          </Paragraph>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </Main>
       )}
     </Grommet>
   );
