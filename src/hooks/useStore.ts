@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { usePersistedState } from "hooks";
 
 export const useStore = () => {
-  const [isFullScreen, setIsFullScreen] = useState<boolean>(false);
+  const [isFullScreen, setIsFullScreen] = usePersistedState<boolean>(
+    "isFullScreen",
+    false,
+  );
 
   return {
     isFullScreen,
