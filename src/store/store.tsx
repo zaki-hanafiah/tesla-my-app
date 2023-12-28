@@ -7,7 +7,6 @@ export const StoreContext = createContext<IStoreState>({
   darkModeOn: false,
   setIsFullScreen: (state: boolean) => state,
   setDarkModeOn: (state: boolean) => state,
-
 });
 
 export const StoreProvider = ({ children }: IStoreProps) => {

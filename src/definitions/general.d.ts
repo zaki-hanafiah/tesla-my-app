@@ -3,5 +3,4 @@ export interface IStoreState {
   setIsFullScreen: (value: boolean) => void;
   darkModeOn?: boolean;
   setDarkModeOn: (value: boolean) => void;
-
 }
