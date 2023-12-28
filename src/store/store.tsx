@@ -4,6 +4,10 @@ import { useStore } from "hooks";
 
 export const StoreContext = createContext<IStoreState>({
   isFullScreen: false,
+  darkModeOn: false,
+  setIsFullScreen: (state: boolean) => state,
+  setDarkModeOn: (state: boolean) => state,
+
 });
 
 export const StoreProvider = ({ children }: IStoreProps) => {
