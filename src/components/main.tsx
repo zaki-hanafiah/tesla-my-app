@@ -1,10 +1,13 @@
 import {
-  CheckBox,
-  Grommet,
-  Heading,
-  Main as MainWrapper,
-  Paragraph,
+    Box, Button, Card, CardBody, CardFooter, CardHeader,
+    CheckBox,
+    Grommet,
+    Heading,
+    Main as MainWrapper,
+    Paragraph,
 } from "grommet";
+
+import { ShareOption, Favorite } from 'grommet-icons'
 import React, { ReactNode, useContext } from "react";
 import { StoreContext } from "store";
 
@@ -28,6 +31,19 @@ const Main = ({ children }: MainProps) => {
           direction="column"
         >
           <Heading className="App-header">Hello World</Heading>
+            <Box>
+                <Card  height="small" width="small" background="light-1">
+                    <CardHeader pad="medium">Header</CardHeader>
+                    <CardBody pad="medium">Body</CardBody>
+                    <CardFooter pad={{horizontal: "small"}} background="light-2">
+                        <Button
+                            icon={<Favorite color="red" />}
+                            hoverIndicator
+                        />
+                        <Button icon={<ShareOption color="plain" />} hoverIndicator />
+                    </CardFooter>
+                </Card>
+            </Box>
           <Paragraph>
             Edit <code>src/App.tsx</code> and save to reload.
           </Paragraph>
